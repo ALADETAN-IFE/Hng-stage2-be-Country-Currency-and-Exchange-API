@@ -16,6 +16,7 @@ Built using **Node.js**, **Express.js**, **MongoDB**, and **Canvas**.
 - **DELETE** `/countries/:name` - Delete a country record
 - **GET** `/status` - Show total countries and last refresh timestamp
 - **GET** `/countries/image` - Serve summary image with top 5 countries by GDP
+- **GET** `/api-doc` - Serve Swagger UI documentation
 
 ### Currency Handling
 - If a country has multiple currencies, only the first one is stored
