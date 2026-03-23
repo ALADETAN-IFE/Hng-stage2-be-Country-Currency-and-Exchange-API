@@ -5,5 +5,111 @@
     "version": "1.0.0",
     "description": "API documentation for the Country, Currency & Exchange API."
   },
-  "paths": {}
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "API health check and endpoint list",
+        "description": "Returns API status and available endpoints.",
+        "responses": {
+          "200": {
+            "description": "API status and endpoint list"
+          }
+        }
+      }
+    },
+    "/countries/refresh": {
+      "post": {
+        "summary": "Refresh countries from external APIs",
+        "description": "Fetch and cache countries from external APIs.",
+        "responses": {
+          "200": { "description": "Countries refreshed successfully" },
+          "500": { "description": "Error refreshing countries" }
+        }
+      }
+    },
+    "/countries/image": {
+      "get": {
+        "summary": "Get summary image",
+        "description": "Serve a summary image of countries data.",
+        "responses": {
+          "200": { "description": "Summary image returned" },
+          "404": { "description": "Image not found" }
+        }
+      }
+    },
+    "/countries": {
+      "get": {
+        "summary": "Get all countries",
+        "description": "Get all countries (supports ?region, ?currency, ?sort).",
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filter by region"
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filter by currency code"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Sort by field (e.g., gdp_desc)"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of countries" }
+        }
+      }
+    },
+    "/countries/{name}": {
+      "get": {
+        "summary": "Get country by name",
+        "description": "Get one country by name.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Country name"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Country found" },
+          "404": { "description": "Country not found" }
+        }
+      },
+      "delete": {
+        "summary": "Delete country by name",
+        "description": "Delete a country by name.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Country name"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Country deleted" },
+          "404": { "description": "Country not found" }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Get API status",
+        "description": "Get API status with total countries and last refresh time.",
+        "responses": {
+          "200": { "description": "API status" }
+        }
+      }
+    }
+  }
 }
