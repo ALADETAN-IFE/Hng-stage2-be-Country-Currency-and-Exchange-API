@@ -17,9 +17,11 @@
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
     "jimp": "^0.22.10",
-    "morgan": "^1.10.1",
     "mongoose": "^8.0.0",
-    "nodemon": "^3.1.10"
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "jest": "^29.0.0",
