@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node api.js && nodemon index.js",
     "test": "jest --runInBand"
   },
   "keywords": [],
   "author": "IfeCodes",
   "license": "ISC",
-  "description": "HNG Internship Stage 2 — Backend task: Build a RESTful API that fetches country data from an external API, stores it in a database, and provides CRUD operations",
+  "description": "HNG Internship Stage 2 \u2014 Backend task: Build a RESTful API that fetches country data from an external API, stores it in a database, and provides CRUD operations",
   "dependencies": {
     "axios": "^1.6.0",
     "cors": "^2.8.5",
